@@ -9,6 +9,9 @@ configure_file(
 )
 include_directories("${PROJECT_BINARY_DIR}")
 
+# --- Compile bootstrap.lua ---
+execute_process(COMMAND xxd -i bootstrap.lua src/bootstrap.lua.h)
+
 # --- Libraries ---
 include(FetchContent)
 # Raylib

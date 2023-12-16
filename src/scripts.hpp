@@ -1,13 +1,13 @@
 #pragma once
 #include <string>
 
-extern "C" {
-    #include <lua.h>
-    #include <lualib.h>
-    #include <lauxlib.h>
-}
+#include <lua.h>
+#include <lualib.h>
+#include <lauxlib.h>
 
-lua_State* L;
+class Scripts {
+    lua_State* L;
+}
 
 static int average(lua_State *L) {
    int n = lua_gettop(L);
