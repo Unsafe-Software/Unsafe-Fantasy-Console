@@ -10,7 +10,10 @@ configure_file(
 include_directories("${PROJECT_BINARY_DIR}")
 
 # --- Compile bootstrap.lua ---
-execute_process(COMMAND xxd -i bootstrap.lua src/bootstrap.lua.h)
+execute_process(
+  COMMAND xxd -i bootstrap.ufc src/bootstrap.ufc.h
+  WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}
+)
 
 # --- Libraries ---
 include(FetchContent)
@@ -31,6 +34,7 @@ FetchContent_MakeAvailable(lua)
 
 # --- Executables ---
 file(GLOB Sources src/*.c src/*.cpp)
+add_compile_definitions("RELEASE=$<CONFIG:Release>")
 add_executable("${PROJECT_NAME}" ${Sources})
 target_link_libraries("${PROJECT_NAME}" raylib lua::lua)
 

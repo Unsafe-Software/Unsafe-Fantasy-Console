@@ -1,0 +1,29 @@
+function init()
+   -- rect(15, 15, 127 - 16, 127 - 16, 9)
+   circ(32, 32, 6, 9)
+end
+
+function update()
+end
+
+function draw()
+end
+
+-- The moving dot example
+-- function init()
+--    fill(1)
+--    b = 0
+-- end
+--
+-- function update()
+--    b = b + 1
+--    if b >= 128 then
+--       b = 0
+--    end
+-- end
+--
+-- function draw()
+--    pset(b - 1, 0, 1)
+--    pset(127, 0, 1)
+--    pset(b, 0, 9)
+-- end
